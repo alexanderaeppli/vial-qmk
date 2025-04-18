@@ -193,3 +193,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return false;
 }
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    if (host_keyboard_led_state().caps_lock) {
+        RGB_MATRIX_INDICATOR_SET_COLOR(15, 0, 222, 255);  // LED 5 = Red when Caps Lock is ON
+    } else {
+        RGB_MATRIX_INDICATOR_SET_COLOR(15, 0, 0, 0);    // Turn off LED 5 when Caps Lock is OFF
+    }
+    return false;
+}
+
