@@ -177,9 +177,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
+    if (index == 0) { if (clockwise) { tap_code(KC_VOLU);
         } else {
             tap_code(KC_VOLD);
         }
@@ -196,10 +194,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(15, 0, 222, 255);  // LED 5 = Red when Caps Lock is ON
-    } else {
-        RGB_MATRIX_INDICATOR_SET_COLOR(15, 0, 0, 0);    // Turn off LED 5 when Caps Lock is OFF
+        RGB_MATRIX_INDICATOR_SET_COLOR(15, 0, 222, 255);  // LED 15 = Azure when Caps Lock is ON
+        return false;
     }
-    return false;
+    return true;
 }
 
