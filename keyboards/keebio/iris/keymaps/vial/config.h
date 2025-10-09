@@ -31,4 +31,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VIAL_UNLOCK_COMBO_COLS {0,5}
 
 // Added to enable caps lock backlight
+#define SPLIT_LAYER_STATE_ENABLE
 // #define ENABLE_RGB_MATRIX_INDICATORS
